@@ -1,6 +1,5 @@
-#include <iostream>
-#include <string>
 #include <stdio.h>
+// yes this is basically a C program 🤷🏻‍
 
 static const int ARBITRARY_MAX_PASSWORD_LENGTH = 50;
 
@@ -26,11 +25,9 @@ int main(void) {
     char password[ARBITRARY_MAX_PASSWORD_LENGTH + 1];
 
     while(scanf("%d-%d %c: %s", &min, &max, &c, password) > 0) {
-        if (is_valid(min, max, c, password)) {
-            c_valid++;
-        }
+        valid += is_valid(min, max, c, password);
     }
 
-    std::cout << valid << " valid passwords." << std::endl;
+    printf("%d valid passwords\n", valid);
 
 }
